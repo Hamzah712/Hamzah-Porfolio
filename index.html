@@ -8,176 +8,183 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<div class="container-fluid">
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="profile-section">
-            <div class="profile-picture">
-                <a href="#home"><img src="https://www.w3schools.com/w3images/avatar_smoke.jpg" alt="Avatar"></a>
+    <a id="back-to-top"><i class="fas fa-hand-pointer"></i></a>
+    <div class="container-fluid">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="profile-section">
+                <div class="profile-picture">
+                    <a href="#home"><img src="/img/pro.jpg" alt="Avatar"></a>
+                </div>
+                    <a href="#about" id="name-link">
+                        <span class="profile-name">Hello <i class="fa-solid fa-hand-peace"></i></span>
+                    </a>
+                </div>
+        
+            <div class="nav-links d-none d-md-flex">
+                <a href="#home"><i class="fa fa-home fa-2x"></i></a>
+                <a href="#about"><i class="fa fa-user fa-2x"></i></a>
+                <a href="#projects"><i class="fa fa-project-diagram fa-2x"></i></a>
+                <a href="#contact"><i class="fa fa-envelope fa-2x"></i></a>
             </div>
-            <span class="profile-name">Hamza Ahmed</span>
-        </div>
-    
-        <div class="nav-links d-none d-md-flex">
-            <a href="#home"><i class="fa fa-home fa-2x"></i></a>
-            <a href="#about"><i class="fa fa-user fa-2x"></i></a>
-            <a href="#projects"><i class="fa fa-project-diagram fa-2x"></i></a>
-            <a href="#contact"><i class="fa fa-envelope fa-2x"></i></a>
-        </div>
-    
-        <!-- Dropdown for smaller screens -->
-        <div class="dropdown d-md-none ms-auto">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#home"><i class="fa fa-home"></i> Home</a></li>
-                <li><a class="dropdown-item" href="#about"><i class="fa fa-user"></i> About</a></li>
-                <li><a class="dropdown-item" href="#projects"><i class="fa fa-project-diagram"></i> Projects</a></li>
-                <li><a class="dropdown-item" href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>
-            </ul>
-        </div>
-    </nav>     
-
-    <!-- Main content -->
-    <main class="col-12 content px-4">
-        <!-- Header/Home -->
-        <header class="text-center py-5" id="home">
-            <h1 class="display-3">I'm Hamza Ahmed.</h1>
-            <p class="lead">Software Engineer.</p>
-            <img src="https://www.w3schools.com/w3images/man_smoke.jpg" alt="boy" class="img-fluid mt-3">
-        </header>
-
-        <!-- About Section -->
-        <section class="py-5" id="about">
-            <h2 class="text-center">Hamza Ahmed</h2>
-            <hr class="w-25 mx-auto">
-            <p class="text-center">I'm Hamza, a software engineering student with a passion for technology, science, and nature. My journey in software development is driven by a love for creating efficient and innovative solutions. Whether it's coding the backend with C# and Java, or crafting intuitive UI designs, I enjoy bringing ideas to life. I'm constantly exploring new tools and techniques to improve my skills and stay ahead in the ever-evolving tech world. When I'm not coding, you'll find me delving into self-improvement, fitness, and exploring the beauty of nature.</p>
-            <h3 class="text-center mt-4">My Skills</h3>
-
-            <div class="skills mt-4">
-                <div class="skill mb-4">
-                    <p>Web Application</p>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width:80%"></div>
-                    </div>
-                </div>
-                <div class="skill mb-4">
-                    <p>Desktop Application</p>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width:75%"></div>
-                    </div>
-                </div>
-                <div class="skill mb-4">
-                    <p>Web Development</p>
-                    <div class="skill-bar">
-                        <div class="skill-bar-fill" style="width:70%"></div>
-                    </div>
-                </div>
+        
+            <!-- Dropdown for smaller screens -->
+            <div class="dropdown d-md-none ms-auto">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#home"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a class="dropdown-item" href="#about"><i class="fa fa-user"></i> About</a></li>
+                    <li><a class="dropdown-item" href="#projects"><i class="fa fa-project-diagram"></i> Projects</a></li>
+                    <li><a class="dropdown-item" href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>
+                </ul>
             </div>
-        </section>
+        </nav>     
 
-        <section class="py-5 bg-dark stats-section">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-3 mb-4">
-                        <h2 class="mb-3">11+</h2>
-                        <p>Partners</p>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <h2 class="mb-3">55+</h2>
-                        <p>Projects Done</p>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <h2 class="mb-3">89+</h2>
-                        <p>Happy Clients</p>
-                    </div>
-                    <div class="col-md-3 mb-4">
-                        <h2 class="mb-3">150+</h2>
-                        <p>Meetings</p>
-                    </div>
-                </div>
-                <div class="text-center mt-4">
-                    <button class="btn btn-light">Download Resume</button>
-                </div>
-            </div>
-        </section>
+        <!-- Main content -->
+        <main class="col-12 content px-4">
+            <!-- Header/Home -->    
+            <header class="text-center py-5" id="home">
+                <a href="#about" id="name-link"><h1 class="text-gradient">I'm Hamza Ahmed.</h1></a>
+                <p class="lead">
+                    <span class="hover-reveal">Software Engineer.
+                        <img src="/img/prog.gif" alt="prog GIF" class="hover-image">
+                    </span>
+                </p>
+                <img src="/img/pro.jpg" alt="picture" class="img-fluid mt-3">
+            </header>
 
-        <section class="py-5 pricing-section">
-            <h2 class="text-center mb-4">My Price</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="pricing-box p-4">
-                        <h3>Basic</h3>
-                        <!-- Add pricing details here -->
+            <!-- About Section -->
+            <section class="py-5" id="about">
+                <h2 class="text-center">Hamza Ahmed</h2>
+                <hr class="w-25 mx-auto">
+                <p class="text-center">I'm Hamza, a software engineering student with a deep passion for technology, coding, and creative problem-solving. My journey in software development is fueled by a desire to build efficient and innovative solutions. Whether I'm coding the backend with C# and Java or crafting intuitive UI designs, I thrive on turning ideas into reality. I'm always exploring new tools and techniques to sharpen my skills and stay ahead in the fast-paced tech world. When I'm not coding, I'm focused on self-improvement, fitness, and pushing my limits in all aspects of life.</p>
+                <h3 class="text-center mt-4">My Skills</h3>
+
+                <div class="skills mt-4">
+                    <div class="skill mb-4">
+                        <p>Web Development</p>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width:80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <p>Desktop Application</p>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width:75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <p>Web Application</p>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width:70%"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="pricing-box p-4">
-                        <h3>Pro</h3>
-                        <!-- Add pricing details here -->
+            </section>
+
+            <section class="py-5 bg-dark stats-section">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-3 mb-4">
+                            <h2 class="mb-3">11+</h2>
+                            <p>Partners</p>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <h2 class="mb-3">55+</h2>
+                            <p>Projects Done</p>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <h2 class="mb-3">89+</h2>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="col-md-3 mb-4">
+                            <h2 class="mb-3">150+</h2>
+                            <p>Meetings</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-light">Download Resume</button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Portfolio Section -->
-        <section class="py-5" id="Projects">
-            <h2 class="text-center">My Projects</h2>
-            <hr class="w-25 mx-auto mb-5">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding" class="img-fluid mb-4">
-                    <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks" class="img-fluid mb-4">
-                    <img src="https://www.w3schools.com/w3images/sailboat.jpg" alt="Sailboat" class="img-fluid mb-4">
+            <section class="py-5 pricing-section">
+                <h2 class="text-center mb-4">My Price</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="pricing-box p-4">
+                            <h3>Basic</h3>
+                            <!-- Add pricing details here -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="pricing-box p-4">
+                            <h3>Pro</h3>
+                            <!-- Add pricing details here -->
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater" class="img-fluid mb-4">
-                    <img src="https://www.w3schools.com/w3images/chef.jpg" alt="Chef" class="img-fluid mb-4">
-                    <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding" class="img-fluid mb-4">
-                    <img src="https://www.w3schools.com/w3images/p6.jpg" alt="Photo" class="img-fluid mb-4">
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Contact Section -->
-        <section class="py-5" id="contact">
-            <h2 class="text-center">Contact Me</h2>
-            <hr class="w-25 mx-auto mb-5">
-            <div class="contact-info text-center mb-4">
-                <p><i class="fa fa-map-marker fa-fw"></i> Chicago, US</p>
-                <p><i class="fa fa-phone fa-fw"></i> Phone: +00 151515</p>
-                <p><i class="fa fa-envelope fa-fw"></i> Email: mail@mail.com</p>
-            </div>
-            <p class="text-center">Let's get in touch. Send me a message:</p>
-            <form action="/action_page.php" target="_blank" class="mx-auto" style="max-width: 500px;">
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Name" required name="Name">
+            <!-- Portfolio Section -->
+            <section class="py-5" id="projects">
+                <h2 class="text-center">My Projects</h2>
+                <hr class="w-25 mx-auto mb-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding" class="img-fluid mb-4">
+                        <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks" class="img-fluid mb-4">
+                        <img src="https://www.w3schools.com/w3images/sailboat.jpg" alt="Sailboat" class="img-fluid mb-4">
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater" class="img-fluid mb-4">
+                        <img src="https://www.w3schools.com/w3images/chef.jpg" alt="Chef" class="img-fluid mb-4">
+                        <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding" class="img-fluid mb-4">
+                        <img src="https://www.w3schools.com/w3images/p6.jpg" alt="Photo" class="img-fluid mb-4">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email" required name="Email">
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Subject" required name="Subject">
-                </div>
-                <div class="mb-3">
-                    <textarea class="form-control" rows="4" placeholder="Message" required name="Message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-light w-100">Send Message</button>
-            </form>
-        </section>
-    </main>
-</div>
+            </section>
 
+            <!-- Contact Section -->
+            <section class="py-5" id="contact">
+                <h2 class="text-center">Contact Me</h2>
+                <hr class="w-25 mx-auto mb-5">
+                <div class="contact-info text-center mb-4">
+                    <p><i class="fa fa-map-marker fa-fw"></i> Chicago, US</p>
+                    <p><i class="fa fa-phone fa-fw"></i> Phone: +00 151515</p>
+                    <p><i class="fa fa-envelope fa-fw"></i> Email: mail@mail.com</p>
+                </div>
+                <p class="text-center">Let's get in touch. Send me a message:</p>
+                <form action="/action_page.php" target="_blank" class="mx-auto" style="max-width: 500px;">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Name" required name="Name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email" required name="Email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Subject" required name="Subject">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Message" required name="Message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-light w-100">Send Message</button>
+                </form>
+            </section>
+        </main>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

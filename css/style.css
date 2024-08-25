@@ -1,6 +1,6 @@
 
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: black;
     color: white;
     margin: 0;
@@ -30,17 +30,37 @@ body {
     border-radius: 50%;
     overflow: hidden;
     margin-right: 10px;
+    transition: transform 0.3s ease; /* Add transition for smooth hover effect */
 }
-
-.navbar .profile-picture img {
+  
+  .navbar .profile-picture:hover {
+    transform: rotatey(180deg) scale(1.1); /* Rotate 360 degrees and slightly enlarge */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .navbar .profile-picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+  }
 
 .navbar .profile-name {
     color: white;
     font-size: 18px;
+}
+
+.fa-hand-peace {
+    display: inline-block;
+    animation: wave-animation 2s infinite;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(-15deg); }
+    40% { transform: rotate(10deg); }
+    60% { transform: rotate(-15deg); }
+    80% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
 }
 
 .navbar .nav-links a {
@@ -53,15 +73,15 @@ body {
 
 @keyframes glow {
     0% {
-        text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+      text-shadow: 0 0 5px #400000, 0 0 10px #400000, 0 0 15px #400000, 0 0 20px #400000, 0 0 25px #400000, 0 0 30px #400000, 0 0 35px #400000;
     }
     50% {
-        text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00b3ff, 0 0 40px #00b3ff, 0 0 50px #00b3ff, 0 0 60px #00b3ff, 0 0 70px #00b3ff;
+      text-shadow: 0 0 10px #3C339A, 0 0 20px #3C339A, 0 0 30px #3C339A, 0 0 40px #3C339A, 0 0 50px #3C339A, 0 0 60px #3C339A, 0 0 70px #3C339A;
     }
     100% {
-        text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+      text-shadow: 0 0 5px #400000, 0 0 10px #400000, 0 0 15px #400000, 0 0 20px #400000, 0 0 25px #400000, 0 0 30px #400000, 0 0 35px #400000;
     }
-}
+  }
 
 .navbar .nav-links a {
     color: #fff; /* Ensures the text color contrasts with the glow */
@@ -70,9 +90,8 @@ body {
 
 .navbar .nav-links a:hover {
     transform: scale(1.1);
-    animation: glow 1.5s infinite ease-in-out;
+    animation: glow 1.5s infinite;
 }
-
 
 .dropdown-menu {
     background-color: #333;
@@ -88,8 +107,65 @@ body {
     background-color: #555;
 }
 
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background with opacity */
+    color: white;
+    border-radius: 50%;
+    padding: 12px 16px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease; /* Add transition for smoother hover effect */
+  }
+  
+  #back-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Darker hover background */
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+  }
+
 .content {
     padding-top: 30px; /* To prevent content from overlapping with navbar */
+}
+
+.text-gradient  {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#name-link{
+    text-decoration: none;
+    cursor: text;
+}
+
+.hover-reveal {
+    position: relative;
+    cursor: text;
+    display: inline-block;
+}
+
+.hover-image {
+    position: absolute;
+    width: 7rem;
+    display: none;
+    border-radius: 50%;
+    z-index: 10;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+}
+
+.hover-reveal:hover .hover-image {
+    display: block;
+}
+
+/* Optional: Add some space above the text for the image */
+.hover-reveal {
+    padding-top: 0.5rem;
 }
 
 .skill-bar {
