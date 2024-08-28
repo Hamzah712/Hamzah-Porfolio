@@ -8,6 +8,7 @@ body {
     overflow-x: hidden;
 }
 
+/******Navbar CSS Styling******/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,11 +31,11 @@ body {
     border-radius: 50%;
     overflow: hidden;
     margin-right: 10px;
-    transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+    transition: transform 0.3s ease;
 }
   
   .navbar .profile-picture:hover {
-    transform: rotatey(180deg) scale(1.1); /* Rotate 360 degrees and slightly enlarge */
+    transform: rotatey(180deg) scale(1.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
   
@@ -47,6 +48,11 @@ body {
 .navbar .profile-name {
     color: white;
     font-size: 18px;
+    cursor: pointer;
+}
+
+.profile-name:hover{
+    color: #ffc107;
 }
 
 .fa-hand-peace {
@@ -71,26 +77,14 @@ body {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-@keyframes glow {
-    0% {
-      text-shadow: 0 0 5px #400000, 0 0 10px #400000, 0 0 15px #400000, 0 0 20px #400000, 0 0 25px #400000, 0 0 30px #400000, 0 0 35px #400000;
-    }
-    50% {
-      text-shadow: 0 0 10px #3C339A, 0 0 20px #3C339A, 0 0 30px #3C339A, 0 0 40px #3C339A, 0 0 50px #3C339A, 0 0 60px #3C339A, 0 0 70px #3C339A;
-    }
-    100% {
-      text-shadow: 0 0 5px #400000, 0 0 10px #400000, 0 0 15px #400000, 0 0 20px #400000, 0 0 25px #400000, 0 0 30px #400000, 0 0 35px #400000;
-    }
-  }
-
 .navbar .nav-links a {
-    color: #fff; /* Ensures the text color contrasts with the glow */
+    color: #fff;
     transition: transform 0.3s ease;
 }
 
 .navbar .nav-links a:hover {
     transform: scale(1.1);
-    animation: glow 1.5s infinite;
+    color: #ffc107;
 }
 
 .dropdown-menu {
@@ -107,33 +101,37 @@ body {
     background-color: #555;
 }
 
+/******Top button CSS Styling******/
+
 #back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
     display: none;
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background with opacity */
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     border-radius: 50%;
     padding: 12px 16px;
     font-size: 18px;
     cursor: pointer;
     z-index: 1000;
-    transition: transform 0.3s ease; /* Add transition for smoother hover effect */
-  }
+    transition: transform 0.3s ease;
+}
   
-  #back-to-top:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Darker hover background */
-    transform: scale(1.1); /* Slightly enlarge button on hover */
-  }
+#back-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
 
+
+/******Main Content CSS Styling******/
 .content {
     padding-top: 30px; /* To prevent content from overlapping with navbar */
 }
 
 .text-gradient  {
     font-size: 72px;
-    background: -webkit-linear-gradient(#eee, #333);
+    background: -webkit-linear-gradient(#fff, #666);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -147,6 +145,7 @@ body {
     position: relative;
     cursor: text;
     display: inline-block;
+    color: #ffc107;
 }
 
 .hover-image {
@@ -163,19 +162,78 @@ body {
     display: block;
 }
 
-/* Optional: Add some space above the text for the image */
+/* Add some space above the text for the image */
 .hover-reveal {
     padding-top: 0.5rem;
 }
 
+.intro-section {
+    padding: 3rem 0;
+}
+
+.intro-section .intro-details div {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.intro-section .intro-details div:hover {
+    transform: scale(1.1);
+    color: #ffc107;
+}
+
+.intro-section hr {
+    border-top: 3px solid #ffc107;
+}
+
+.intro-section p.lead {
+    color: #ffc107;
+}
+
+.intro-section a.text-light:hover {
+    color: #ffc107;
+}
+
+.skills-container {
+    background-color: #333;
+    color: #f8f9fa;
+    padding: 2rem; 
+    border-radius: 10px;
+}
+
 .skill-bar {
-    background-color: white;
+    background-color: #444;
     height: 28px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .skill-bar-fill {
-    background-color: darkgrey;
+    background-color: #ffc107;
     height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.skill p {
+    margin-bottom: 0;
+    color: #f8f9fa;
+}
+
+.skills-container .skill {
+    background: #555;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.skills-container .skill:hover .skill-bar-fill {
+    width: calc(100% - 10%);
+}
+
+.stats-section{
+    background-color: #333;
+    color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
 }
 
 .stats-section h2 {
@@ -187,27 +245,169 @@ body {
 }
 
 .pricing-section {
-    background-color: black;
+    padding: 60px 0;
 }
 
 .pricing-box {
     background-color: #333;
     color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Media Queries for small screens */
+.pricing-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-box h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffc107;
+    text-transform: uppercase;
+}
+
+.pricing-box p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.pricing-box ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.pricing-box ul li {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.pricing-box .btn {
+    color: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-box .btn:hover {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 300px;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.custom-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Dim light effect */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.video-wrapper:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-title {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 4rem;
+}
+
+.contact-icon i {
+    font-size: 36px; /* Icon size */
+    color: #ccc; /* Default color */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-icon:hover i {
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block;
+    padding: 10px;
+}
+
+.contact-icon i:hover {
+    color: #1DA1F2;
+}
+
+.contact-icon i.fab.fa-instagram:hover {
+    color: #E1306C; /* Instagram color */
+}
+
+.contact-icon i.fab.fa-github:hover {
+    color: #333; /* GitHub color */
+}
+
+.contact-icon i.fab.fa-linkedin:hover {
+    color: #0077B5; /* LinkedIn color */
+}
+
+.contact-icon i.fas.fa-envelope:hover {
+    color: #D44638; /* Email color */
+}
+
+/* Media Queries for small screens 
 @media (max-width: 768px) {
     .navbar-custom {
-        flex-direction: column; /* Stack buttons vertically */
-        height: auto; /* Adjust height for stacked buttons */
+        flex-direction: column;
+        height: auto;
         padding: 10px 0;
     }
 
     .navbar-custom a {
-        margin: 10px 0; /* Adjust margin for vertical layout */
+        margin: 10px 0;
     }
 
     .nav-links {
         display: none;
     }
 }
+*/

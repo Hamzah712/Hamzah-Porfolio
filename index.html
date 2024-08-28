@@ -24,14 +24,14 @@
                     <a href="#home"><img src="img/pro.jpg" alt="Avatar"></a>
                 </div>
                     <a href="#about" id="name-link">
-                        <span class="profile-name">Hello <i class="fa-solid fa-hand-peace"></i></span>
+                        <span class="profile-name fw-bold">Hello <i class="fa-solid fa-hand-peace"></i></span>
                     </a>
                 </div>
         
             <div class="nav-links d-none d-md-flex">
                 <a href="#home"><i class="fa fa-home fa-2x"></i></a>
                 <a href="#about"><i class="fa fa-user fa-2x"></i></a>
-                <a href="#projects"><i class="fa fa-project-diagram fa-2x"></i></a>
+                <a href="#projects"><i class="fas fa-code fa-2x"></i></a>
                 <a href="#contact"><i class="fa fa-envelope fa-2x"></i></a>
             </div>
         
@@ -43,7 +43,7 @@
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                     <li><a class="dropdown-item" href="#home"><i class="fa fa-home"></i> Home</a></li>
                     <li><a class="dropdown-item" href="#about"><i class="fa fa-user"></i> About</a></li>
-                    <li><a class="dropdown-item" href="#projects"><i class="fa fa-project-diagram"></i> Projects</a></li>
+                    <li><a class="dropdown-item" href="#projects"><i class="fas fa-code fa-lg"></i> Projects</a></li>
                     <li><a class="dropdown-item" href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
@@ -53,118 +53,208 @@
         <main class="col-12 content px-4">
             <!-- Header/Home -->    
             <header class="text-center py-5" id="home">
-                <a href="#about" id="name-link"><h1 class="text-gradient">I'm Hamza Ahmed.</h1></a>
+                <h1 class="text-gradient fw-bold">I'm Hamzah Ahmed.</h1>
                 <p class="lead">
-                    <span class="hover-reveal">Software Engineer.
+                    <span class="hover-reveal fw-bold">Software Engineer.
                         <img src="img/prog.gif" alt="prog GIF" class="hover-image">
                     </span>
                 </p>
                 <img src="img/pro.jpg" alt="picture" class="img-fluid mt-3">
             </header>
 
-            <!-- About Section -->
             <section class="py-5" id="about">
-                <h2 class="text-center">Hamza Ahmed</h2>
-                <hr class="w-25 mx-auto">
-                <p class="text-center">I'm Hamza, a software engineering student with a deep passion for technology, coding, and creative problem-solving. My journey in software development is fueled by a desire to build efficient and innovative solutions. Whether I'm coding the backend with C# and Java or crafting intuitive UI designs, I thrive on turning ideas into reality. I'm always exploring new tools and techniques to sharpen my skills and stay ahead in the fast-paced tech world. When I'm not coding, I'm focused on self-improvement, fitness, and pushing my limits in all aspects of life.</p>
-                <h3 class="text-center mt-4">My Skills</h3>
+                <div class="intro-section text-center text-light">
+                    <h1 class="display-4 fw-bold">Hamzah Ahmed</h1>
+                    <hr class="bg-light w-50 mx-auto mb-4">
+                    <p class="lead mb-4">Software Engineering Student & Aspiring Full-Stack Developer</p>
+                    
+                    <div class="intro-details d-flex justify-content-center flex-wrap mb-5">
+                        <div class="mx-3 my-2">
+                            <i class="fas fa-birthday-cake fa-lg"></i>
+                            <span class="ms-2">Born: August 16, 2001</span>
+                        </div>
+                        <div class="mx-3 my-2">
+                            <i class="fas fa-map-marker-alt fa-lg"></i>
+                            <span class="ms-2">Islamabad, Pakistan</span>
+                        </div>
+                        <div class="mx-3 my-2">
+                            <i class="fas fa-envelope fa-lg"></i>
+                            <span class="ms-2">hamzah.712680678@gmail.com</span>
+                        </div>
+                        <div class="mx-3 my-2">
+                            <i class="fas fa-laptop-code fa-lg"></i>
+                            <span class="ms-2">Focus: C#, Java, Full-Stack Development</span>
+                        </div>
+                        <div class="mx-3 my-2">
+                            <i class="fas fa-code fa-lg"></i><!--put the link here when u publish it-->
+                            <span class="ms-2"><a href="https://hamzaahmed.github.io" target="_blank" class="text-light text-decoration-none">Portfolio: hamzaahmed.github.io</a></span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-justify mx-auto" style="max-width: 800px;">
+                        I'm Hamzah, a driven and detail-oriented software engineering student with a deep passion for full-stack development. My journey in tech is fueled by a commitment to excellence and a curiosity for the latest industry trends. Proficient in C# and Java, I excel in building robust backend systems, while also enjoying the creativity involved in crafting user-friendly interfaces. My dedication extends beyond the code, as I constantly seek ways to improve both my technical and soft skills. Whether working on a complex project or exploring new technologies, I approach each challenge with a growth mindset and a desire to innovate.
+                    </p>
+                </div>                
 
-                <div class="skills mt-4">
+                <h2 class="text-center fw-bold">Technical Skills</h2>
+                <hr class="w-25 mx-auto mb-5">
+                <div class="skills-container my-4">
                     <div class="skill mb-4">
-                        <p>Web Development</p>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="width:80%"></div>
+                        <div class="d-flex justify-content-between">
+                            <p class="fw-bold">Web Development</p>
+                            <span class="fw-bold">80%</span>
                         </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <p class="text-muted mt-2 small">HTML, CSS, JavaScript, Bootstrap, ASP.NET</p>
                     </div>
                     <div class="skill mb-4">
-                        <p>Desktop Application</p>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="width:75%"></div>
+                        <div class="d-flex justify-content-between">
+                            <p class="fw-bold">Desktop Application</p>
+                            <span class="fw-bold">75%</span>
                         </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 75%;"></div>
+                        </div>
+                        <p class="text-muted mt-2 small">Java, C#, WPF, JavaFX</p>
                     </div>
                     <div class="skill mb-4">
-                        <p>Web Application</p>
-                        <div class="skill-bar">
-                            <div class="skill-bar-fill" style="width:70%"></div>
+                        <div class="d-flex justify-content-between">
+                            <p class="fw-bold">Web Application</p>
+                            <span class="fw-bold">70%</span>
                         </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" style="width: 70%;"></div>
+                        </div>
+                        <p class="text-muted mt-2 small">React, Angular, .NET Core</p>
                     </div>
                 </div>
             </section>
 
-            <section class="py-5 bg-dark stats-section">
+            <h2 class="text-center fw-bold">Acheivements</h2>
+            <hr class="w-25 mx-auto mb-5">
+            <section class="py-5 stats-section my-4">
                 <div class="container">
                     <div class="row text-center">
                         <div class="col-md-3 mb-4">
                             <h2 class="mb-3">11+</h2>
-                            <p>Partners</p>
+                            <p class="fw-bold">Projects Done</p>
                         </div>
                         <div class="col-md-3 mb-4">
                             <h2 class="mb-3">55+</h2>
-                            <p>Projects Done</p>
+                            <p class="fw-bold">Courses Covered</p>
                         </div>
                         <div class="col-md-3 mb-4">
                             <h2 class="mb-3">89+</h2>
-                            <p>Happy Clients</p>
+                            <p class="fw-bold">Certificates</p>
                         </div>
                         <div class="col-md-3 mb-4">
-                            <h2 class="mb-3">150+</h2>
-                            <p>Meetings</p>
+                            <h2 class="mb-3">60 Kg</h2><!--I can do more if I had a spotter-->
+                            <p class="fw-bold">Bench Press</p><!--To be decided-->
                         </div>
                     </div>
                     <div class="text-center mt-4">
-                        <button class="btn btn-light">Download Resume</button>
+                        <button id="downloadBtn" class="btn btn-light">Download Resume</button>
                     </div>
                 </div>
             </section>
 
-            <section class="py-5 pricing-section">
-                <h2 class="text-center mb-4">My Price</h2>
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="pricing-box p-4">
-                            <h3>Basic</h3>
-                            <!-- Add pricing details here -->
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="pricing-box p-4">
-                            <h3>Pro</h3>
-                            <!-- Add pricing details here -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Portfolio Section -->
-            <section class="py-5" id="projects">
-                <h2 class="text-center">My Projects</h2>
+            <section class="py-5 pricing-section my-4">
+                <h2 class="text-center fw-bold">My Services</h2>
                 <hr class="w-25 mx-auto mb-5">
                 <div class="row">
-                    <div class="col-md-6">
-                        <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding" class="img-fluid mb-4">
-                        <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks" class="img-fluid mb-4">
-                        <img src="https://www.w3schools.com/w3images/sailboat.jpg" alt="Sailboat" class="img-fluid mb-4">
+                    <div class="col-md-6 mb-4">
+                        <div class="pricing-box p-4">
+                            <h3 class="fw-bold">Basic Package</h3>
+                            <p>Perfect for startups and small businesses looking for a simple yet effective online presence.</p>
+                            <ul>
+                                <li>Custom single-page website</li>
+                                <li>Responsive design</li>
+                                <li>Basic SEO optimization</li>
+                                <li>1 month of free support</li>
+                            </ul>
+                            <button class="btn">Contact for Pricing</button>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater" class="img-fluid mb-4">
-                        <img src="https://www.w3schools.com/w3images/chef.jpg" alt="Chef" class="img-fluid mb-4">
-                        <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding" class="img-fluid mb-4">
-                        <img src="https://www.w3schools.com/w3images/p6.jpg" alt="Photo" class="img-fluid mb-4">
+                    <div class="col-md-6 mb-4">
+                        <div class="pricing-box p-4">
+                            <h3 class="fw-bold">Pro Package</h3>
+                            <p>Ideal for growing businesses that need a robust and scalable website with backend features.</p>
+                            <ul>
+                                <li>Multi-page website with dynamic content</li>
+                                <li>Advanced responsive design</li>
+                                <li>Full SEO optimization</li>
+                                <li>Backend integration (e.g., contact forms, user authentication)</li>
+                                <li>3 months of free support</li>
+                            </ul>
+                            <button class="btn">Contact for Pricing</button>
+                        </div>
                     </div>
+                </div>
+            </section>            
+
+            <!-- Portfolio Section -->
+            <section class="py-5 my-4" id="projects">
+                <h2 class="text-center fw-bold">My Projects</h2>
+                <hr class="w-25 mx-auto mb-5">
+                <div class="row">
+                    <div class="video-container">
+                        <div class="video-wrapper">
+                            <video src="path-to-your-placeholder-video.mp4" class="custom-video" controls></video>
+                            <div class="video-overlay">
+                                <div class="video-title">Video Title 1</div>
+                            </div>
+                        </div>
+                        <div class="video-wrapper">
+                            <video src="path-to-your-placeholder-video.mp4" class="custom-video" controls></video>
+                            <div class="video-overlay">
+                                <div class="video-title">Video Title 2</div>
+                            </div>
+                        </div>
+                        <div class="video-wrapper">
+                            <video src="path-to-your-placeholder-video.mp4" class="custom-video" controls></video>
+                            <div class="video-overlay">
+                                <div class="video-title">Video Title 3</div>
+                            </div>
+                        </div>
+                        <div class="video-wrapper">
+                            <video src="path-to-your-placeholder-video.mp4" class="custom-video" controls></video>
+                            <div class="video-overlay">
+                                <div class="video-title">Video Title 4</div>
+                            </div>
+                        </div>
+                        <div class="video-wrapper">
+                            <video src="path-to-your-placeholder-video.mp4" class="custom-video" controls></video>
+                            <div class="video-overlay">
+                                <div class="video-title">Video Title 5</div>
+                            </div>
+                        </div>
+                    </div>                    
                 </div>
             </section>
 
             <!-- Contact Section -->
-            <section class="py-5" id="contact">
-                <h2 class="text-center">Contact Me</h2>
-                <hr class="w-25 mx-auto mb-5">
-                <div class="contact-info text-center mb-4">
-                    <p><i class="fa fa-map-marker fa-fw"></i> Chicago, US</p>
-                    <p><i class="fa fa-phone fa-fw"></i> Phone: +00 151515</p>
-                    <p><i class="fa fa-envelope fa-fw"></i> Email: mail@mail.com</p>
-                </div>
-                <p class="text-center">Let's get in touch. Send me a message:</p>
-                <form action="/action_page.php" target="_blank" class="mx-auto" style="max-width: 500px;">
+            <section class="py-5 my-4" id="contact">
+                <h2 class="text-center fw-bold">Contact Me</h2>
+                    <hr class="w-25 mx-auto mb-5">
+                    <div class="contact-icons text-center">
+                        <a href="https://www.instagram.com/yourprofile" target="_blank" class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com/yourprofile" target="_blank" class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:hamzah.712680678@mail.com" class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+
+                    <h3 class="text-center mb-3">Get in Touch</h3>
+                <form action="https://formspree.io/f/xyzgodqp" method="post" target="_blank" class="mx-auto" style="max-width: 500px;">
                     <div class="mb-3">
                         <input type="text" class="form-control" placeholder="Name" required name="Name">
                     </div>
