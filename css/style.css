@@ -98,7 +98,8 @@ body {
 }
 
 .dropdown-menu .dropdown-item:hover {
-    background-color: #555;
+    background-color: #333;
+    color: #ffc107;
 }
 
 /******Top button CSS Styling******/
