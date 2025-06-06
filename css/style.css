@@ -87,6 +87,10 @@ body {
     color: #ffc107;
 }
 
+.btn-dark:active{
+    background-color: #333;
+}
+
 .dropdown-menu {
     background-color: #333;
     border: none;
@@ -127,7 +131,7 @@ body {
 
 /******Main Content CSS Styling******/
 .content {
-    padding-top: 30px; /* To prevent content from overlapping with navbar */
+    padding-top: 30px;
 }
 
 .text-gradient  {
@@ -384,7 +388,7 @@ body {
 
 .contact-icon i {
     font-size: 36px; /* Icon size */
-    color: #ccc; /* Default color */
+    color: #ccc;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -404,19 +408,19 @@ body {
 }
 
 .contact-icon i.fab.fa-instagram:hover {
-    color: #E1306C; /* Instagram color */
+    color: #E1306C;
 }
 
 .contact-icon i.fab.fa-github:hover {
-    color: #333; /* GitHub color */
+    color: #333;
 }
 
 .contact-icon i.fab.fa-linkedin:hover {
-    color: #0077B5; /* LinkedIn color */
+    color: #0077B5;
 }
 
 .contact-icon i.fas.fa-envelope:hover {
-    color: #D44638; /* Email color */
+    color: #D44638;
 }
 
 /* Media Queries for small screens 
@@ -436,3 +440,26 @@ body {
     }
 }
 */
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
