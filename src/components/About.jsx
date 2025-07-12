@@ -33,7 +33,7 @@ const About = () => {
           <div className="w-16 h-1 bg-primary-500 mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Personal Story */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -44,14 +44,14 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold text-neutral-900 mb-6">My Journey</h3>
             
-            <div className="prose prose-lg text-neutral-600">
-              <p className="leading-relaxed mb-6">
+            <div className="prose prose-lg text-neutral-600 space-y-6">
+              <p className="leading-relaxed">
                 I'm Hamzah, a passionate software engineering student with a deep love for creating 
                 elegant digital solutions. My journey in technology began with curiosity and has 
                 evolved into expertise in full-stack development.
               </p>
               
-              <p className="leading-relaxed mb-6">
+              <p className="leading-relaxed">
                 I specialize in building robust backend systems using <strong>C#</strong> and 
                 <strong> ASP.NET Core</strong>, while crafting intuitive user experiences with 
                 modern frontend technologies. My approach combines technical excellence with 
@@ -67,7 +67,7 @@ const About = () => {
 
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="inline-flex items-center space-x-2 text-primary-600 hover:text-primary-700 transition-colors duration-200 font-medium"
+              className="inline-flex items-center space-x-2 text-primary-600 hover:text-primary-700 transition-colors duration-200 font-medium mt-6"
             >
               <ExternalLink size={16} />
               <a
@@ -103,12 +103,12 @@ const About = () => {
                       viewport={{ once: true }}
                       className="flex items-center space-x-4"
                     >
-                      <div className="p-2 bg-primary-100 rounded-lg">
+                      <div className="p-2 bg-primary-100 rounded-lg flex-shrink-0">
                         <Icon className="text-primary-600" size={18} />
                       </div>
-                      <div>
-                        <span className="text-neutral-500 text-sm font-medium">{info.label}</span>
-                        <p className="text-neutral-900 font-medium">{info.value}</p>
+                      <div className="min-w-0 flex-1">
+                        <span className="text-neutral-500 text-sm font-medium block">{info.label}</span>
+                        <p className="text-neutral-900 font-medium break-words">{info.value}</p>
                       </div>
                     </motion.div>
                   );
@@ -134,10 +134,33 @@ const About = () => {
                     <h4 className="text-2xl font-bold text-neutral-900 mb-1">
                       {achievement.number}
                     </h4>
-                    <p className="text-neutral-600 text-sm font-medium">{achievement.label}</p>
+                    <p className="text-neutral-600 text-sm font-medium leading-tight">{achievement.label}</p>
                   </motion.div>
                 );
               })}
+            </div>
+
+            {/* Additional Skills Highlight */}
+            <div className="bg-gradient-to-r from-primary-50 to-slate-50 p-6 rounded-2xl">
+              <h4 className="text-lg font-bold text-neutral-900 mb-4">Core Competencies</h4>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span className="text-neutral-700">Full-Stack Development</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span className="text-neutral-700">API Design</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span className="text-neutral-700">Database Design</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span className="text-neutral-700">UI/UX Design</span>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
