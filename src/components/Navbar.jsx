@@ -17,7 +17,7 @@ const Navbar = ({ activeSection }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -27,7 +27,12 @@ const Navbar = ({ activeSection }) => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 80; // Account for navbar height
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
     setIsMobileMenuOpen(false);
   };
@@ -38,46 +43,49 @@ const Navbar = ({ activeSection }) => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-dark/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+          isScrolled 
+            ? 'glass shadow-lg border-b border-neutral-200' 
+            : 'bg-transparent'
         }`}
       >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center space-x-3"
+              whileHover={{ scale: 1.02 }}
+              className="flex items-center space-x-3 cursor-pointer"
+              onClick={() => scrollToSection('home')}
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
+              <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary-500">
                 <img
                   src="img/pro.jpg"
                   alt="Hamzah Ahmed"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <span className="text-xl font-bold gradient-text">
+              <span className="text-xl font-bold text-neutral-900">
                 Hamzah Ahmed
               </span>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-1">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 return (
                   <motion.button
                     key={item.id}
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 ${
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                       activeSection === item.id
-                        ? 'bg-primary text-dark font-semibold'
-                        : 'text-gray-300 hover:text-primary hover:bg-primary/10'
+                        ? 'bg-primary-500 text-white shadow-md'
+                        : 'text-neutral-700 hover:text-primary-600 hover:bg-primary-50'
                     }`}
                   >
-                    <Icon size={18} />
-                    <span>{item.label}</span>
+                    <Icon size={16} />
+                    <span className="text-sm">{item.label}</span>
                   </motion.button>
                 );
               })}
@@ -87,7 +95,7 @@ const Navbar = ({ activeSection }) => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-primary"
+              className="md:hidden p-2 text-neutral-700 hover:text-primary-600 rounded-lg hover:bg-primary-50"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -104,30 +112,32 @@ const Navbar = ({ activeSection }) => {
             exit={{ opacity: 0, x: '100%' }}
             className="fixed inset-0 z-40 md:hidden"
           >
-            <div className="absolute inset-0 bg-dark/90 backdrop-blur-md" />
-            <div className="relative h-full flex flex-col justify-center items-center space-y-8">
-              {navItems.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <motion.button
-                    key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center space-x-3 px-6 py-3 rounded-full text-lg transition-all duration-300 ${
-                      activeSection === item.id
-                        ? 'bg-primary text-dark font-semibold'
-                        : 'text-gray-300 hover:text-primary hover:bg-primary/10'
-                    }`}
-                  >
-                    <Icon size={24} />
-                    <span>{item.label}</span>
-                  </motion.button>
-                );
-              })}
+            <div className="absolute inset-0 bg-neutral-900/20 backdrop-blur-sm" />
+            <div className="absolute right-0 top-0 h-full w-80 max-w-full glass-dark">
+              <div className="flex flex-col h-full pt-20 px-6">
+                {navItems.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <motion.button
+                      key={item.id}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`flex items-center space-x-3 px-4 py-4 rounded-lg text-left transition-all duration-200 ${
+                        activeSection === item.id
+                          ? 'bg-primary-500 text-white'
+                          : 'text-white hover:bg-white/10'
+                      }`}
+                    >
+                      <Icon size={20} />
+                      <span className="font-medium">{item.label}</span>
+                    </motion.button>
+                  );
+                })}
+              </div>
             </div>
           </motion.div>
         )}

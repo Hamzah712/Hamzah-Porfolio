@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Code } from 'lucide-react';
+import { Heart, Code, Coffee } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-light py-8 border-t border-gray-800">
+    <footer className="bg-neutral-900 text-white py-12">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,18 +18,25 @@ const Footer = () => {
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <Code className="text-primary" size={24} />
+              <Code className="text-primary-400" size={20} />
             </motion.div>
-            <span className="text-gray-400">Made with</span>
+            <span className="text-neutral-400">Crafted with</span>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
-              <Heart className="text-red-500 fill-current" size={20} />
+              <Heart className="text-red-400 fill-current" size={16} />
             </motion.div>
-            <span className="text-gray-400">by</span>
+            <span className="text-neutral-400">and</span>
+            <motion.div
+              animate={{ rotate: [0, 5, -5, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              <Coffee className="text-amber-400" size={16} />
+            </motion.div>
+            <span className="text-neutral-400">by</span>
             <motion.span
-              whileHover={{ color: '#ffc107' }}
+              whileHover={{ color: '#0ea5e9' }}
               className="text-white font-semibold cursor-pointer transition-colors duration-300"
             >
               Hamzah Ahmed
@@ -41,9 +48,9 @@ const Footer = () => {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-gray-500 text-sm"
+            className="text-neutral-500 text-sm"
           >
-            © {new Date().getFullYear()} All rights reserved. Built with React & Framer Motion.
+            © {new Date().getFullYear()} All rights reserved. Built with React, Tailwind CSS & Framer Motion.
           </motion.p>
         </motion.div>
       </div>

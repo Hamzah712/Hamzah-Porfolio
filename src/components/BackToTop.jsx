@@ -35,9 +35,9 @@ const BackToTop = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-3 bg-primary text-dark rounded-full shadow-lg hover:bg-yellow-400 transition-all duration-300 z-50 hover:shadow-xl"
+          className="fixed bottom-8 right-8 p-3 bg-primary-500 text-white rounded-full shadow-lg hover:bg-primary-600 transition-all duration-300 z-50 hover:shadow-xl"
         >
-          <ArrowUp size={24} />
+          <ArrowUp size={20} />
         </motion.button>
       )}
     </AnimatePresence>

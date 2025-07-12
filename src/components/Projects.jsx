@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Play, X, Filter } from 'lucide-react';
+import { ExternalLink, Github, Eye, X, Filter } from 'lucide-react';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -11,22 +11,22 @@ const Projects = () => {
       id: 1,
       title: 'E-Commerce Platform',
       category: 'fullstack',
-      description: 'A complete e-commerce solution built with ASP.NET Core and React',
-      longDescription: 'A comprehensive e-commerce platform featuring user authentication, product catalog, shopping cart, payment integration, and admin dashboard. Built with modern technologies and best practices.',
+      description: 'Complete e-commerce solution with modern design and robust functionality',
+      longDescription: 'A comprehensive e-commerce platform featuring user authentication, product catalog, shopping cart, payment integration, and admin dashboard. Built with ASP.NET Core backend and React frontend, ensuring scalability and performance.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['ASP.NET Core', 'React', 'SQL Server', 'Entity Framework'],
+      technologies: ['ASP.NET Core', 'React', 'SQL Server', 'Entity Framework', 'Stripe API'],
       liveUrl: '#',
       githubUrl: '#',
       featured: true
     },
     {
       id: 2,
-      title: 'Task Management App',
+      title: 'Task Management System',
       category: 'desktop',
-      description: 'Desktop application for project and task management',
-      longDescription: 'A powerful desktop application for managing projects and tasks with features like drag-and-drop, real-time updates, team collaboration, and detailed reporting.',
+      description: 'Professional desktop application for project and task management',
+      longDescription: 'A powerful desktop application for managing projects and tasks with features like drag-and-drop, real-time updates, team collaboration, and detailed reporting. Built with WPF and following MVVM architecture.',
       image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['C#', 'WPF', 'SQLite', 'MVVM'],
+      technologies: ['C#', 'WPF', 'SQLite', 'MVVM', 'Entity Framework'],
       githubUrl: '#',
       featured: false
     },
@@ -34,10 +34,10 @@ const Projects = () => {
       id: 3,
       title: 'Portfolio Website',
       category: 'web',
-      description: 'Responsive portfolio website with modern design',
-      longDescription: 'A modern, responsive portfolio website showcasing projects and skills with smooth animations, dark theme, and optimized performance.',
+      description: 'Modern, responsive portfolio with elegant design and smooth animations',
+      longDescription: 'A modern, responsive portfolio website showcasing projects and skills with smooth animations, dark theme, and optimized performance. Built with modern web technologies and best practices.',
       image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'SCSS'],
       liveUrl: 'https://hamzah712.github.io/temp1_dark-theme/',
       githubUrl: '#',
       featured: true
@@ -46,24 +46,35 @@ const Projects = () => {
       id: 4,
       title: 'API Gateway Service',
       category: 'backend',
-      description: 'Microservices API gateway with authentication',
-      longDescription: 'A robust API gateway service handling authentication, rate limiting, load balancing, and request routing for microservices architecture.',
+      description: 'Microservices API gateway with authentication and rate limiting',
+      longDescription: 'A robust API gateway service handling authentication, rate limiting, load balancing, and request routing for microservices architecture. Built with ASP.NET Core and deployed using Docker.',
       image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['ASP.NET Core', 'JWT', 'Redis', 'Docker'],
+      technologies: ['ASP.NET Core', 'JWT', 'Redis', 'Docker', 'Nginx'],
       githubUrl: '#',
       featured: false
     },
     {
       id: 5,
-      title: 'Mobile Banking App',
-      category: 'mobile',
-      description: 'Secure mobile banking application',
-      longDescription: 'A secure mobile banking application with biometric authentication, real-time transactions, account management, and comprehensive security features.',
+      title: 'Learning Management System',
+      category: 'fullstack',
+      description: 'Comprehensive LMS with course management and student tracking',
+      longDescription: 'A full-featured learning management system with course creation, student enrollment, progress tracking, and assessment tools. Features real-time communication and comprehensive analytics.',
       image: 'https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'JWT'],
+      technologies: ['ASP.NET Core', 'React', 'SignalR', 'PostgreSQL', 'Azure'],
       liveUrl: '#',
       githubUrl: '#',
       featured: true
+    },
+    {
+      id: 6,
+      title: 'Inventory Management',
+      category: 'desktop',
+      description: 'Desktop application for warehouse and inventory management',
+      longDescription: 'A comprehensive inventory management system for tracking products, managing suppliers, and generating reports. Features barcode scanning and real-time inventory updates.',
+      image: 'https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=800',
+      technologies: ['Java', 'JavaFX', 'MySQL', 'JasperReports', 'Maven'],
+      githubUrl: '#',
+      featured: false
     }
   ];
 
@@ -72,8 +83,7 @@ const Projects = () => {
     { id: 'fullstack', label: 'Full Stack' },
     { id: 'web', label: 'Web' },
     { id: 'desktop', label: 'Desktop' },
-    { id: 'backend', label: 'Backend' },
-    { id: 'mobile', label: 'Mobile' }
+    { id: 'backend', label: 'Backend' }
   ];
 
   const filteredProjects = filter === 'all' 
@@ -81,7 +91,7 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="projects" className="py-20 bg-dark-light/50">
+    <section id="projects" className="section-padding bg-neutral-50">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -90,10 +100,14 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-            My Projects
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+            Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
+          <div className="w-16 h-1 bg-primary-500 mx-auto rounded-full" />
+          <p className="text-neutral-600 mt-6 max-w-2xl mx-auto">
+            A showcase of my recent work, demonstrating expertise across different 
+            technologies and project types.
+          </p>
         </motion.div>
 
         {/* Filter Buttons */}
@@ -102,7 +116,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-3 mb-12"
         >
           {categories.map((category) => (
             <motion.button
@@ -110,10 +124,10 @@ const Projects = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setFilter(category.id)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 ${
                 filter === category.id
-                  ? 'bg-primary text-dark'
-                  : 'bg-dark-light text-gray-400 hover:text-primary hover:bg-primary/10'
+                  ? 'bg-primary-500 text-white shadow-md'
+                  : 'bg-white text-neutral-600 hover:text-primary-600 hover:bg-primary-50 border border-neutral-200'
               }`}
             >
               {category.label}
@@ -131,27 +145,26 @@ const Projects = () => {
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
+                exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="bg-dark-light rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:shadow-primary/20 group"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral-200 card-hover group"
               >
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                  <div className="absolute inset-0 bg-neutral-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-3">
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       onClick={() => setSelectedProject(project)}
-                      className="p-3 bg-primary rounded-full text-dark hover:bg-yellow-400 transition-colors duration-300"
+                      className="p-3 bg-white rounded-full text-neutral-700 hover:text-primary-600 transition-colors duration-200"
                     >
-                      <Play size={20} />
+                      <Eye size={18} />
                     </motion.button>
                     {project.liveUrl && (
                       <motion.a
@@ -160,9 +173,9 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-3 bg-primary rounded-full text-dark hover:bg-yellow-400 transition-colors duration-300"
+                        className="p-3 bg-white rounded-full text-neutral-700 hover:text-primary-600 transition-colors duration-200"
                       >
-                        <ExternalLink size={20} />
+                        <ExternalLink size={18} />
                       </motion.a>
                     )}
                     {project.githubUrl && (
@@ -172,37 +185,37 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="p-3 bg-primary rounded-full text-dark hover:bg-yellow-400 transition-colors duration-300"
+                        className="p-3 bg-white rounded-full text-neutral-700 hover:text-primary-600 transition-colors duration-200"
                       >
-                        <Github size={20} />
+                        <Github size={18} />
                       </motion.a>
                     )}
                   </div>
                   {project.featured && (
-                    <div className="absolute top-4 left-4 bg-primary text-dark px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute top-4 left-4 bg-primary-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       Featured
                     </div>
                   )}
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-neutral-900 mb-2 group-hover:text-primary-600 transition-colors duration-200">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                  <p className="text-neutral-600 text-sm mb-4 line-clamp-2">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-dark-lighter text-primary text-xs rounded-full"
+                        className="px-3 py-1 bg-neutral-100 text-neutral-700 text-xs rounded-full font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="px-3 py-1 bg-dark-lighter text-gray-400 text-xs rounded-full">
+                      <span className="px-3 py-1 bg-neutral-100 text-neutral-500 text-xs rounded-full font-medium">
                         +{project.technologies.length - 3}
                       </span>
                     )}
@@ -220,14 +233,14 @@ const Projects = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-dark/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              className="fixed inset-0 bg-neutral-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
               onClick={() => setSelectedProject(null)}
             >
               <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
+                initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
-                className="bg-dark-light rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative">
@@ -238,27 +251,27 @@ const Projects = () => {
                   />
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="absolute top-4 right-4 p-2 bg-dark/80 rounded-full text-white hover:bg-dark transition-colors duration-300"
+                    className="absolute top-4 right-4 p-2 bg-white/90 rounded-full text-neutral-700 hover:bg-white transition-colors duration-200"
                   >
-                    <X size={24} />
+                    <X size={20} />
                   </button>
                 </div>
 
                 <div className="p-8">
-                  <h3 className="text-3xl font-bold text-primary mb-4">
+                  <h3 className="text-3xl font-bold text-neutral-900 mb-4">
                     {selectedProject.title}
                   </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-neutral-600 mb-6 leading-relaxed">
                     {selectedProject.longDescription}
                   </p>
 
                   <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-white mb-3">Technologies Used:</h4>
+                    <h4 className="text-lg font-semibold text-neutral-900 mb-3">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.technologies.map((tech, index) => (
                         <span
                           key={index}
-                          className="px-4 py-2 bg-dark-lighter text-primary rounded-full"
+                          className="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-lg font-medium"
                         >
                           {tech}
                         </span>
@@ -272,11 +285,11 @@ const Projects = () => {
                         href={selectedProject.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center space-x-2 bg-primary text-dark px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors duration-300"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="btn-primary flex items-center space-x-2"
                       >
-                        <ExternalLink size={20} />
+                        <ExternalLink size={18} />
                         <span>View Live</span>
                       </motion.a>
                     )}
@@ -285,11 +298,11 @@ const Projects = () => {
                         href={selectedProject.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center space-x-2 border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-dark transition-all duration-300"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="btn-secondary flex items-center space-x-2"
                       >
-                        <Github size={20} />
+                        <Github size={18} />
                         <span>View Code</span>
                       </motion.a>
                     )}

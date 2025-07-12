@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import LoadingScreen from './components/LoadingScreen';
-import ParticleBackground from './components/ParticleBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -49,7 +48,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-dark text-white">
+    <div className="relative min-h-screen bg-neutral-50">
       <AnimatePresence mode="wait">
         {loading ? (
           <LoadingScreen key="loading" />
@@ -59,9 +58,8 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative z-10"
+            className="relative"
           >
-            <ParticleBackground />
             <Navbar activeSection={activeSection} />
             <main>
               <Hero />

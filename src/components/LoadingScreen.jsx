@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Zap } from 'lucide-react';
+import { Code } from 'lucide-react';
 
 const LoadingScreen = () => {
   const [progress, setProgress] = useState(0);
@@ -24,7 +24,7 @@ const LoadingScreen = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-dark flex items-center justify-center z-50"
+      className="fixed inset-0 bg-white flex items-center justify-center z-50"
     >
       <div className="text-center">
         <motion.div
@@ -37,10 +37,10 @@ const LoadingScreen = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="w-20 h-20 border-4 border-primary/30 border-t-primary rounded-full mx-auto mb-4"
+              className="w-16 h-16 border-4 border-neutral-200 border-t-primary-500 rounded-full mx-auto mb-4"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <Code className="w-8 h-8 text-primary" />
+              <Code className="w-6 h-6 text-primary-500" />
             </div>
           </div>
         </motion.div>
@@ -49,7 +49,7 @@ const LoadingScreen = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-4xl font-bold gradient-text mb-4"
+          className="text-3xl font-bold text-neutral-900 mb-2"
         >
           Hamzah Ahmed
         </motion.h1>
@@ -58,16 +58,16 @@ const LoadingScreen = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-gray-400 mb-8"
+          className="text-neutral-600 mb-8"
         >
           Loading Portfolio<span className="loading-dots"></span>
         </motion.p>
 
-        <div className="w-64 h-2 bg-dark-light rounded-full mx-auto overflow-hidden">
+        <div className="w-64 h-2 bg-neutral-200 rounded-full mx-auto overflow-hidden">
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
-            className="h-full bg-gradient-to-r from-primary to-yellow-300 rounded-full"
+            className="h-full bg-gradient-to-r from-primary-500 to-primary-600 rounded-full"
           />
         </div>
 
@@ -75,7 +75,7 @@ const LoadingScreen = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="text-sm text-gray-500 mt-4"
+          className="text-sm text-neutral-500 mt-4"
         >
           {progress}%
         </motion.p>

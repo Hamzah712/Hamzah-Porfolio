@@ -1,63 +1,65 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Globe, Monitor } from 'lucide-react';
+import { Code, Database, Globe, Monitor, Server, Smartphone } from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
       icon: Globe,
       title: 'Full-Stack Development',
-      percentage: 80,
-      color: 'from-blue-500 to-purple-600',
+      percentage: 85,
+      color: 'bg-gradient-to-r from-blue-500 to-blue-600',
       skills: [
-        'Back-End: C#, .NET 8, ASP.NET Core, Web API',
-        'Frameworks: React, Angular, Blazor',
-        'ORM: Entity Framework Core',
-        'Tools: Visual Studio, Git, Azure DevOps',
-        'Architecture: Microservices, RESTful APIs'
+        'ASP.NET Core & Web API',
+        'React & Modern JavaScript',
+        'Entity Framework Core',
+        'RESTful API Design',
+        'Microservices Architecture'
       ]
     },
     {
       icon: Monitor,
-      title: 'Desktop Application Development',
-      percentage: 75,
-      color: 'from-green-500 to-teal-600',
+      title: 'Desktop Applications',
+      percentage: 80,
+      color: 'bg-gradient-to-r from-green-500 to-green-600',
       skills: [
-        'Languages: Java, C#',
-        'Frameworks: JavaFX, Swing, WPF, WinForms',
-        'Tools: Visual Studio, IntelliJ IDEA, Eclipse',
-        'Patterns: MVVM, MVC',
-        'Other: Unit Testing'
+        'C# & .NET Framework',
+        'WPF & WinForms',
+        'Java & JavaFX',
+        'MVVM Pattern',
+        'Cross-platform Development'
       ]
     },
     {
       icon: Code,
-      title: 'Web Development',
+      title: 'Web Technologies',
       percentage: 75,
-      color: 'from-orange-500 to-red-600',
+      color: 'bg-gradient-to-r from-purple-500 to-purple-600',
       skills: [
-        'Languages: HTML5, CSS3, JavaScript',
-        'Frameworks: Bootstrap, Node.js',
-        'Tools: Git, Visual Studio Code',
-        'Other: Responsive Design'
+        'HTML5 & CSS3',
+        'JavaScript ES6+',
+        'Bootstrap & Tailwind',
+        'Responsive Design',
+        'Modern Build Tools'
       ]
     },
     {
       icon: Database,
       title: 'Database Management',
-      percentage: 70,
-      color: 'from-purple-500 to-pink-600',
+      percentage: 75,
+      color: 'bg-gradient-to-r from-orange-500 to-orange-600',
       skills: [
-        'RDBMS: SQL Server, MySQL, PostgreSQL',
-        'NoSQL: MongoDB, Firebase',
-        'Tools: SSMS, pgAdmin, MongoDB Compass',
-        'Other: Database Design, Query Optimization, Data Modeling'
+        'SQL Server & MySQL',
+        'PostgreSQL & MongoDB',
+        'Database Design',
+        'Query Optimization',
+        'Data Modeling'
       ]
     }
   ];
 
   return (
-    <section id="skills" className="py-20 bg-dark-light/50">
+    <section id="skills" className="section-padding bg-neutral-50">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -66,10 +68,14 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-            Technical Skills
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+            Technical Expertise
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
+          <div className="w-16 h-1 bg-primary-500 mx-auto rounded-full" />
+          <p className="text-neutral-600 mt-6 max-w-2xl mx-auto">
+            Proficient in modern technologies and frameworks, with a focus on creating 
+            scalable, maintainable solutions.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -82,40 +88,33 @@ const Skills = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-dark-light p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:shadow-primary/20"
+                className="bg-white p-8 rounded-2xl shadow-sm border border-neutral-200 card-hover"
               >
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-4">
-                    <div className="p-3 bg-primary/20 rounded-lg">
-                      <Icon className="text-primary" size={24} />
+                    <div className="p-3 bg-neutral-100 rounded-xl">
+                      <Icon className="text-neutral-700" size={24} />
                     </div>
-                    <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                    <h3 className="text-xl font-bold text-neutral-900">{category.title}</h3>
                   </div>
-                  <span className="text-2xl font-bold text-primary">{category.percentage}%</span>
+                  <span className="text-2xl font-bold text-primary-600">{category.percentage}%</span>
                 </div>
 
                 {/* Progress Bar */}
                 <div className="mb-6">
-                  <div className="w-full bg-dark-lighter rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-neutral-200 rounded-full h-2 overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${category.percentage}%` }}
                       transition={{ duration: 1.5, delay: index * 0.2 }}
                       viewport={{ once: true }}
-                      className={`h-full bg-gradient-to-r ${category.color} rounded-full relative`}
-                    >
-                      <motion.div
-                        animate={{ x: [0, 10, 0] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute inset-0 bg-white/20 rounded-full"
-                      />
-                    </motion.div>
+                      className={`h-full ${category.color} rounded-full relative`}
+                    />
                   </div>
                 </div>
 
                 {/* Skills List */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
                       key={skillIndex}
@@ -123,10 +122,10 @@ const Skills = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 + skillIndex * 0.05 }}
                       viewport={{ once: true }}
-                      className="text-sm text-gray-400 flex items-start space-x-2"
+                      className="flex items-center space-x-3"
                     >
-                      <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                      <span>{skill}</span>
+                      <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0" />
+                      <span className="text-neutral-600 font-medium">{skill}</span>
                     </motion.div>
                   ))}
                 </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin, Instagram, CheckCircle, Clock } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,14 +17,17 @@ const Contact = () => {
       icon: Mail,
       label: 'Email',
       value: 'hamzah.712680678@gmail.com',
-      href: 'mailto:hamzah.712680678@gmail.com',
-      color: 'hover:text-red-400'
+      href: 'mailto:hamzah.712680678@gmail.com'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Islamabad, Pakistan',
-      color: 'hover:text-green-400'
+      value: 'Islamabad, Pakistan'
+    },
+    {
+      icon: Clock,
+      label: 'Response Time',
+      value: 'Within 24 hours'
     }
   ];
 
@@ -32,26 +35,17 @@ const Contact = () => {
     {
       icon: Github,
       href: 'https://github.com/Hamzah712',
-      color: 'hover:text-gray-400',
       label: 'GitHub'
     },
     {
       icon: Linkedin,
       href: 'https://www.linkedin.com/in/hamzah-ahmed-faea-310177244/',
-      color: 'hover:text-blue-400',
       label: 'LinkedIn'
     },
     {
       icon: Instagram,
       href: 'https://www.instagram.com/h.a.se_712/',
-      color: 'hover:text-pink-400',
       label: 'Instagram'
-    },
-    {
-      icon: Mail,
-      href: 'mailto:hamzah.712680678@gmail.com',
-      color: 'hover:text-red-400',
-      label: 'Email'
     }
   ];
 
@@ -80,7 +74,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="section-padding bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -89,28 +83,36 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-            Contact Me
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+            Let's Work Together
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
+          <div className="w-16 h-1 bg-primary-500 mx-auto rounded-full" />
+          <p className="text-neutral-600 mt-6 max-w-2xl mx-auto">
+            Ready to bring your ideas to life? I'm here to help you create 
+            something amazing. Let's discuss your project.
+          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="space-y-8"
           >
-            <h3 className="text-2xl font-bold text-primary mb-8">Get in Touch</h3>
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              I'm always open to discussing new opportunities, interesting projects, 
-              or just having a chat about technology. Feel free to reach out!
-            </p>
+            <div>
+              <h3 className="text-2xl font-bold text-neutral-900 mb-6">Get in Touch</h3>
+              <p className="text-neutral-600 leading-relaxed mb-8">
+                I'm always excited to discuss new opportunities and interesting projects. 
+                Whether you have a specific idea in mind or just want to explore possibilities, 
+                I'd love to hear from you.
+              </p>
+            </div>
 
             {/* Contact Info */}
-            <div className="space-y-6 mb-8">
+            <div className="space-y-6">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
                 return (
@@ -122,20 +124,20 @@ const Contact = () => {
                     viewport={{ once: true }}
                     className="flex items-center space-x-4"
                   >
-                    <div className="p-3 bg-primary/20 rounded-lg">
-                      <Icon className="text-primary" size={24} />
+                    <div className="p-3 bg-primary-100 rounded-xl">
+                      <Icon className="text-primary-600" size={20} />
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm">{info.label}</p>
+                      <p className="text-neutral-500 text-sm font-medium">{info.label}</p>
                       {info.href ? (
                         <a
                           href={info.href}
-                          className={`text-white font-medium transition-colors duration-300 ${info.color}`}
+                          className="text-neutral-900 font-semibold hover:text-primary-600 transition-colors duration-200"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-white font-medium">{info.value}</p>
+                        <p className="text-neutral-900 font-semibold">{info.value}</p>
                       )}
                     </div>
                   </motion.div>
@@ -145,7 +147,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+              <h4 className="text-lg font-semibold text-neutral-900 mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => {
                   const Icon = social.icon;
@@ -155,12 +157,12 @@ const Contact = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.2, y: -5 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.9 }}
-                      className={`p-3 bg-dark-light rounded-full text-gray-400 transition-all duration-300 ${social.color} hover:bg-primary/10`}
+                      className="p-3 bg-neutral-100 rounded-xl text-neutral-600 hover:text-primary-600 hover:bg-primary-100 transition-all duration-200"
                       title={social.label}
                     >
-                      <Icon size={24} />
+                      <Icon size={20} />
                     </motion.a>
                   );
                 })}
@@ -174,26 +176,26 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-dark-light p-8 rounded-xl shadow-lg"
+            className="bg-neutral-50 p-8 rounded-2xl"
           >
-            <h3 className="text-2xl font-bold text-primary mb-6">Send Message</h3>
+            <h3 className="text-2xl font-bold text-neutral-900 mb-6">Send a Message</h3>
             
             {isSubmitted && (
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center space-x-2 bg-green-500/20 text-green-400 p-4 rounded-lg mb-6"
+                className="flex items-center space-x-2 bg-green-100 text-green-700 p-4 rounded-xl mb-6"
               >
                 <CheckCircle size={20} />
-                <span>Message sent successfully!</span>
+                <span className="font-medium">Message sent successfully! I'll get back to you soon.</span>
               </motion.div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-400 text-sm font-medium mb-2">
-                    Name *
+                  <label className="block text-neutral-700 text-sm font-semibold mb-2">
+                    Full Name *
                   </label>
                   <input
                     type="text"
@@ -201,13 +203,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-lighter border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors duration-300"
-                    placeholder="Your Name"
+                    className="w-full px-4 py-3 bg-white border border-neutral-300 rounded-xl text-neutral-900 placeholder-neutral-500 focus:border-primary-500 focus:outline-none transition-colors duration-200"
+                    placeholder="Your full name"
                   />
                 </div>
                 <div>
-                  <label className="block text-gray-400 text-sm font-medium mb-2">
-                    Email *
+                  <label className="block text-neutral-700 text-sm font-semibold mb-2">
+                    Email Address *
                   </label>
                   <input
                     type="email"
@@ -215,14 +217,14 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-lighter border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-white border border-neutral-300 rounded-xl text-neutral-900 placeholder-neutral-500 focus:border-primary-500 focus:outline-none transition-colors duration-200"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-gray-400 text-sm font-medium mb-2">
+                <label className="block text-neutral-700 text-sm font-semibold mb-2">
                   Subject *
                 </label>
                 <input
@@ -231,13 +233,13 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-lighter border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors duration-300"
-                  placeholder="Project Discussion"
+                  className="w-full px-4 py-3 bg-white border border-neutral-300 rounded-xl text-neutral-900 placeholder-neutral-500 focus:border-primary-500 focus:outline-none transition-colors duration-200"
+                  placeholder="What's this about?"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-400 text-sm font-medium mb-2">
+                <label className="block text-neutral-700 text-sm font-semibold mb-2">
                   Message *
                 </label>
                 <textarea
@@ -246,8 +248,8 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-dark-lighter border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-primary focus:outline-none transition-colors duration-300 resize-none"
-                  placeholder="Tell me about your project..."
+                  className="w-full px-4 py-3 bg-white border border-neutral-300 rounded-xl text-neutral-900 placeholder-neutral-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 resize-none"
+                  placeholder="Tell me about your project or idea..."
                 />
               </div>
 
@@ -256,20 +258,20 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center justify-center space-x-2 bg-primary text-dark py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-primary flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                      className="w-5 h-5 border-2 border-dark/30 border-t-dark rounded-full"
+                      className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
                     />
                     <span>Sending...</span>
                   </>
                 ) : (
                   <>
-                    <Send size={20} />
+                    <Send size={18} />
                     <span>Send Message</span>
                   </>
                 )}
