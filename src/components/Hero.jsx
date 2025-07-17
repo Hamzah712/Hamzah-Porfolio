@@ -87,7 +87,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="text-lg md:text-xl text-neutral-600 mb-8 h-8 flex items-center justify-center software-engineer-trigger"
+              className="text-lg md:text-xl text-neutral-600 mb-8 h-8 flex items-center justify-center software-engineer-trigger relative"
             >
               <span className="border-r-2 border-primary-500 pr-1 min-h-[1.5rem] flex items-center">
                 {displayText}
@@ -236,7 +236,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.0 }}
-              className="text-xl text-neutral-600 h-8 flex items-center"
+              className="text-xl text-neutral-600 h-8 flex items-center software-engineer-trigger relative"
             >
               <span className="border-r-2 border-primary-500 pr-1 min-h-[1.5rem] flex items-center">
                 {displayText}

@@ -45,28 +45,33 @@ const EasterEggs = () => {
 
     // Software engineer hover handler
     const handleSoftwareEngineerHover = (e) => {
-      const target = e.target;
-      if (target.closest('.software-engineer-trigger')) {
+      const trigger = e.target.closest('.software-engineer-trigger');
+      if (trigger) {
         hoverGif.style.display = 'block';
-        updateGifPosition(e);
+        updateGifPosition(e, trigger);
       }
     };
 
     const handleSoftwareEngineerMove = (e) => {
-      if (e.target.closest('.software-engineer-trigger')) {
-        updateGifPosition(e);
+      const trigger = e.target.closest('.software-engineer-trigger');
+      if (trigger) {
+        updateGifPosition(e, trigger);
       }
     };
 
     const handleSoftwareEngineerLeave = (e) => {
-      if (!e.relatedTarget || !e.relatedTarget.closest('.software-engineer-trigger')) {
+      const trigger = e.target.closest('.software-engineer-trigger');
+      const relatedTrigger = e.relatedTarget?.closest('.software-engineer-trigger');
+      
+      if (trigger && !relatedTrigger) {
         hoverGif.style.display = 'none';
       }
     };
 
-    const updateGifPosition = (e) => {
-      const x = e.clientX - 40; // Center the GIF
-      const y = e.clientY - 40;
+    const updateGifPosition = (e, trigger) => {
+      const triggerRect = trigger.getBoundingClientRect();
+      const x = e.clientX - 40; // Center the GIF horizontally
+      const y = triggerRect.bottom + window.scrollY + 10; // Position below the text with 10px gap
       hoverGif.style.left = `${x}px`;
       hoverGif.style.top = `${y}px`;
     };
