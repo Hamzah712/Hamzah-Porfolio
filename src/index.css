@@ -152,6 +152,5 @@ body {
   z-index: 9999;
   pointer-events: none;
   border-radius: 50%;
-  transition: left 0.1s ease-out, top 0.1s ease-out;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
