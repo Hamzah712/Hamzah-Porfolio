@@ -176,10 +176,10 @@ const About = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-sm"
+                  className="flex items-center space-x-3 bg-white p-3 md:p-4 rounded-lg shadow-sm"
                 >
                   <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                  <span className="text-slate-700 font-medium">{competency}</span>
+                  <span className="text-slate-700 font-medium text-sm md:text-base break-words">{competency}</span>
                 </motion.div>
               ))}
             </div>

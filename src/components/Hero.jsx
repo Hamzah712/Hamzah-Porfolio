@@ -77,7 +77,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-4xl md:text-6xl font-bold text-neutral-900 mb-4"
+              className="text-4xl md:text-6xl font-bold text-neutral-900 mb-4 name-trigger"
             >
               Hamzah Ahmed
             </motion.h1>
@@ -87,7 +87,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="text-lg md:text-xl text-neutral-600 mb-8 h-8 flex items-center justify-center"
+              className="text-lg md:text-xl text-neutral-600 mb-8 h-8 flex items-center justify-center software-engineer-trigger"
             >
               <span className="border-r-2 border-primary-500 pr-1 min-h-[1.5rem] flex items-center">
                 {displayText}

@@ -10,6 +10,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import EasterEggs from './components/EasterEggs';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -71,6 +72,7 @@ function App() {
             </main>
             <Footer />
             <BackToTop />
+            <EasterEggs />
           </motion.div>
         )}
       </AnimatePresence>
