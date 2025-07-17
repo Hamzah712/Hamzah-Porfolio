@@ -48,14 +48,14 @@ const EasterEggs = () => {
       const trigger = e.target.closest('.software-engineer-trigger');
       if (trigger) {
         hoverGif.style.display = 'block';
-        updateGifPosition(e, trigger);
+        updateGifPosition(e);
       }
     };
 
     const handleSoftwareEngineerMove = (e) => {
       const trigger = e.target.closest('.software-engineer-trigger');
       if (trigger) {
-        updateGifPosition(e, trigger);
+        updateGifPosition(e);
       }
     };
 
@@ -68,10 +68,9 @@ const EasterEggs = () => {
       }
     };
 
-    const updateGifPosition = (e, trigger) => {
-      const triggerRect = trigger.getBoundingClientRect();
-      const x = e.clientX - 40; // Center the GIF horizontally
-      const y = triggerRect.bottom + window.scrollY + 10; // Position below the text with 10px gap
+    const updateGifPosition = (e) => {
+      const x = e.clientX - 40; // Center the GIF horizontally on cursor
+      const y = e.clientY + window.scrollY - 50; // Position above cursor with offset
       hoverGif.style.left = `${x}px`;
       hoverGif.style.top = `${y}px`;
     };
