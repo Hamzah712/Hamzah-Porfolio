@@ -53,17 +53,17 @@ const Navbar = ({ activeSection }) => {
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="flex items-center space-x-3 cursor-pointer"
+              className="flex items-center space-x-3 cursor-pointer group"
               onClick={() => scrollToSection('home')}
             >
-              <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary-500">
+              <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary-500 group-hover:ring-primary-600 transition-all duration-200">
                 <img
-                  src="img/pro.jpg"
+                  src="https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=100"
                   alt="Hamzah Ahmed"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-200"
                 />
               </div>
-              <span className="text-xl font-bold text-neutral-900">
+              <span className="text-xl font-bold text-neutral-900 group-hover:text-primary-600 transition-colors duration-200">
                 Hamzah Ahmed
               </span>
             </motion.div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import LoadingScreen from './components/LoadingScreen';
+import UnderConstruction from './components/UnderConstruction';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -15,6 +16,7 @@ import EasterEggs from './components/EasterEggs';
 function App() {
   const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
+  const [underConstruction, setUnderConstruction] = useState(true); // Set to false to show full portfolio
 
   useEffect(() => {
     // Simulate loading time
@@ -47,6 +49,11 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Show under construction page
+  if (underConstruction) {
+    return <UnderConstruction />;
+  }
 
   return (
     <div className="relative min-h-screen bg-neutral-50">
