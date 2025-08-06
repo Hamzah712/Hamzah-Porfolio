@@ -160,5 +160,3 @@ const UnderConstruction = ({ onEnter }) => {
 };
 
 export default UnderConstruction;
-
-export default UnderConstruction
