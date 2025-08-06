@@ -1,3 +1,7 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Wrench, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+
 const UnderConstruction = ({ onEnter }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 flex items-center justify-center relative overflow-hidden">
@@ -6,7 +10,7 @@ const UnderConstruction = ({ onEnter }) => {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-primary-500/20 rounded-full"
+            className="absolute w-2 h-2 bg-blue-500/20 rounded-full"
             animate={{
               x: [0, Math.random() * 100 - 50],
               y: [0, Math.random() * 100 - 50],
@@ -34,7 +38,7 @@ const UnderConstruction = ({ onEnter }) => {
           transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
           className="mb-8"
         >
-          <div className="w-24 h-24 mx-auto bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center shadow-2xl">
+          <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-2xl">
             <Wrench size={40} className="text-white" />
           </div>
         </motion.div>
@@ -71,7 +75,7 @@ const UnderConstruction = ({ onEnter }) => {
               initial={{ width: 0 }}
               animate={{ width: "75%" }}
               transition={{ delay: 1.2, duration: 2, ease: "easeOut" }}
-              className="h-full bg-gradient-to-r from-primary-500 to-primary-400 rounded-full relative"
+              className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full relative"
             >
               <div className="absolute inset-0 bg-white/20 animate-pulse rounded-full" />
             </motion.div>
@@ -98,7 +102,7 @@ const UnderConstruction = ({ onEnter }) => {
               href="mailto:hamzah.712680678@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-200 flex items-center space-x-2"
+              className="px-8 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-200 flex items-center space-x-2"
             >
               <Mail size={18} />
               <span>Get in Touch</span>
@@ -108,7 +112,7 @@ const UnderConstruction = ({ onEnter }) => {
               onClick={onEnter}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 border-2 border-neutral-600 text-neutral-300 rounded-lg font-semibold hover:border-primary-500 hover:text-primary-400 transition-all duration-200"
+              className="px-8 py-3 border-2 border-neutral-600 text-neutral-300 rounded-lg font-semibold hover:border-blue-500 hover:text-blue-400 transition-all duration-200"
             >
               Enter Portfolio
             </motion.button>
@@ -134,7 +138,7 @@ const UnderConstruction = ({ onEnter }) => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center text-neutral-400 hover:text-primary-400 hover:bg-neutral-700 transition-all duration-200"
+              className="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center text-neutral-400 hover:text-blue-400 hover:bg-neutral-700 transition-all duration-200"
             >
               <Icon size={20} />
             </motion.a>
@@ -156,3 +160,5 @@ const UnderConstruction = ({ onEnter }) => {
 };
 
 export default UnderConstruction;
+
+export default UnderConstruction
