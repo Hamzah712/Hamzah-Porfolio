@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wrench, Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Wrench, Mail, Github, Linkedin, Instagram } from 'lucide-react';
 
 const UnderConstruction = ({ onEnter }) => {
   return (
@@ -36,7 +36,7 @@ const UnderConstruction = ({ onEnter }) => {
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-          className="mb-8 mt-2"
+          className="mb-8"
           
         >
           <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-2xl">
@@ -61,7 +61,7 @@ const UnderConstruction = ({ onEnter }) => {
           transition={{ delay: 0.6 }}
           className="text-xl md:text-2xl text-neutral-400 mb-8 leading-relaxed"
         >
-          I'm crafting something amazing for you. My portfolio is currently being built with passion and attention to detail.
+          Work is still going on. My portfolio is currently being built with passion and attention to every detail.
         </motion.p>
 
         {/* Progress Bar */}
@@ -74,7 +74,7 @@ const UnderConstruction = ({ onEnter }) => {
           <div className="w-full max-w-md mx-auto bg-neutral-800 rounded-full h-3 overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
-              animate={{ width: "75%" }}
+              animate={{ width: "80%" }}
               transition={{ delay: 1.2, duration: 2, ease: "easeOut" }}
               className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full relative"
             >
@@ -87,7 +87,7 @@ const UnderConstruction = ({ onEnter }) => {
             transition={{ delay: 2 }}
             className="text-sm text-neutral-500 mt-2"
           >
-            75% Complete
+            80% Complete
           </motion.p>
         </motion.div>
 
@@ -128,9 +128,9 @@ const UnderConstruction = ({ onEnter }) => {
           className="mt-12 flex justify-center space-x-6"
         >
           {[
-            { icon: Github, href: "https://github.com", label: "GitHub" },
-            { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-            { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+            { icon: Github, href: "https://github.com/Hamzah712", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/hamzahfaea", label: "LinkedIn" },
+            { icon: Instagram, href: "https://www.instagram.com/_hamza712/", label: "Instagram" },
           ].map(({ icon: Icon, href, label }) => (
             <motion.a
               key={label}
@@ -153,7 +153,7 @@ const UnderConstruction = ({ onEnter }) => {
           transition={{ delay: 2 }}
           className="mt-16 text-neutral-600 text-sm"
         >
-          Expected launch: Coming Soon • Built with React & Framer Motion
+          Expected launch: Soon • Built with React & Framer Motion
         </motion.p>
       </div>
     </div>
