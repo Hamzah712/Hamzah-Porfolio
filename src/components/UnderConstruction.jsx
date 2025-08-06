@@ -36,7 +36,8 @@ const UnderConstruction = ({ onEnter }) => {
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-          className="mb-8"
+          className="mb-8 mt-2"
+          
         >
           <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-2xl">
             <Wrench size={40} className="text-white" />
